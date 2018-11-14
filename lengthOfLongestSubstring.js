@@ -15,22 +15,36 @@
 // Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
 
 var lengthOfLongestSubstring = function(string) {
-  var current = 1;
-  var i = 0;
+  // var current = 1;
+  // var i = 0;
 
-  for (let j = 1; j < string.length; j++) {
-    for (var k = i; k < j; k++) {
-      if (string.charAt(k) === string.charAt(j)) {
-        break;
-      }
+  // for (let j = 1; j < string.length; j++) {
+  //   for (var k = i; k < j; k++) {
+  //     if (string.charAt(k) === string.charAt(j)) {
+  //       break;
+  //     }
+  //   }
+  //   if (k === j) {
+  //     current = Math.max(current, j - i + 1);
+  //   } else {
+  //     i = k + 1;
+  //   }
+  // }
+  // return string ? current : 0;
+
+  var map = {};
+  var current = 0;
+  var max = 0;
+
+  for (var i = 0; i < string.length; i++) {
+    if (map[string[i]] && map[string[i]] >= current) {
+      current = map[string[i]] + 1;
     }
-    if (k === j) {
-      current = Math.max(current, j - i + 1);
-    } else {
-      i = k + 1;
-    }
+    map[string[i]] = i;
+    max = Math.max(max, i - start + 1);
   }
-  return string ? current : 0;
+
+  return max;
 };
 
 lengthOfLongestSubstring("abcabcbb"); //3
