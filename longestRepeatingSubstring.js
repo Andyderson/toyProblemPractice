@@ -19,4 +19,4 @@ var repeatingSubstring = function(string) {
   return result;
 };
 
-repeatingSubstring("dbbbbbddddeeeeee"); //'ddddd'
+repeatingSubstring("dbbbbbddddeeeeee"); //'eeeeee'
