@@ -34,3 +34,40 @@ var wiggleSort = function(nums) {
   }
   return nums;
 };
+
+//Mapping to an object
+
+var wiggleSort = function(array) {
+  var map = {};
+  var objKeys;
+
+  for (var i = 0; i < array.length; i++) {
+    map[array[i]] = map[array[i]] || 0;
+    map[array[i]]++;
+  }
+  objKeys = Object.keys(obj);
+
+  var currElem;
+  for (var i = 0; i < array.length; i++) {
+    if (i % 2 === 0) {
+      currElem = objKeys[0];
+      if (map[currElem]) {
+        array[i] = parseInt(currElem);
+        map[currElem]--;
+        if (obj[currElem] === 0) {
+          objKeys.shift();
+        }
+      }
+    } else if (i % 2 !== 0) {
+      currElem = objKeys[objKeys.length - 1];
+      if (map[currElem]) {
+        array[i] = parseInt(currElem);
+        map[currElem]--;
+        if (map[currElem] === 0) {
+          mapKeys.pop();
+        }
+      }
+    }
+  }
+  return array;
+};
