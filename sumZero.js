@@ -48,4 +48,4 @@ var sumZero = function(array) {
 // sumZero([-1, -1, -1]); //false
 // sumZero([1, -1, -5, 20, 2]); //true
 // sumZero([1, 2, 3, 4, 5, 77, 8, -100]); //false
-// sumZero([-1, -2, 3]); //true
+sumZero([-1, -2, 3]); //true
