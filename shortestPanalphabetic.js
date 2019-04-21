@@ -19,7 +19,7 @@ var shortestPanalphabeticWindow = function(array, string) {
   var useString;
   var length = string.length;
 
-  for (var i = 0; i < string.length; i++) {
+  for (var i = 0; i < length; i++) {
     if (string[i] === array[pointer]) {
       pointer++;
       subString = subString + string[i];
@@ -28,7 +28,7 @@ var shortestPanalphabeticWindow = function(array, string) {
     }
 
     if (pointer === array.length) {
-      if (!answer || answer.length > subString.length) {
+      if (!answer || answer.length > sublength) {
         answer = subString;
       }
 
