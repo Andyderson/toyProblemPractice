@@ -2,21 +2,11 @@
 // Output: [7, 0, 8]
 // Explanation: 342 + 465 = 807.
 
-var addTwoNumbers = function(array1, array2) {
-  var sort1 = parseInt(array1.reverse().join(""));
-  var sort2 = parseInt(array2.reverse().join(""));
+var addTwoNumbers = function(l1, l2) {
+  var l1Reverse = parseInt(l1.reverse().join(""));
+  var l2Reverse = parseInt(l2.reverse().join(""));
 
-  var sum = (sort1 + sort2)
-    .toString()
-    .split("")
-    .reverse();
-  var results = [];
-
-  for (var i = 0; i < sum.length; i++) {
-    results.push(parseInt(sum[i]));
-  }
-
-  return results;
+  return l1Reverse + l2Reverse;
 };
 
 addTwoNumbers([2, 4, 3], [5, 6, 4]); //[7, 0, 8]
