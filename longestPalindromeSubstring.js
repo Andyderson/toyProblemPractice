@@ -24,6 +24,7 @@ var longestPalindrome = function(string) {
       result = string.substring(left, right + 1);
     }
   };
+
   for (let i = 0; i < string.length; i++) {
     if (i > 0 && string[i] === string[i - 1]) {
       checkPalindrome(i - 1, i);

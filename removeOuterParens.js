@@ -1,3 +1,6 @@
+// Input: "(()())(())"
+// Output: "()()()"
+
 var removeOuterParentheses = function(S) {
   var results = [];
   var count = 0;
@@ -10,3 +13,5 @@ var removeOuterParentheses = function(S) {
   }
   return results.join("");
 };
+
+removeOuterParentheses("(()())(())");
