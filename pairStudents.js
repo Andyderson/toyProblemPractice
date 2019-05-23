@@ -12,39 +12,41 @@
 //     ["94", "Economics"]
 // ]
 
-// Sample Output (pseudocode, in any order)
-
-// find_pairs(student_course_pairs) =>
-// {
-//     [58, 17]: ["Software Design", "Linear Algebra"]
-//     [58, 94]: ["Economics"]
-//     [17, 94]: []
-// }
-
-const pairStudents = array => {
-  let results = {};
-  let temp = {};
+var pairStudents = array => {
+  var results = {};
+  var map = {};
 
   for (let i = 0; i < array.length; i++) {
-    if (!temp[array[i][0]]) {
-      temp[array[i][0]] = [];
-      temp[array[i][0]].push(array[i][1]);
+    if (!map[array[i][0]]) {
+      map[array[i][0]] = [];
+      map[array[i][0]].push(array[i][1]);
     } else {
-      temp[array[i][0]].push(array[i][1]);
+      map[array[i][0]].push(array[i][1]);
     }
   }
 
-  let ids = Object.keys(temp);
-  let classes = Object.values(temp);
+  var classes = Object.values(map);
+  var students = Object.keys(map);
 
-  console.log(ids, classes);
+  var pairs = [];
+  var sharedClasses = [];
 
   for (let j = 0; j < classes.length; j++) {
-    for (let k = 0; k < classes[j].length; k++) {
-      console.log(classes[j][k]);
-      for (let l = 0; l < classes[j][k].length; l++) {}
+    for (let k = j + 1; k < classes.length; k++) {
+      pairs.push(Number(students[j]), Number(students[k]));
+      for (let l = 0; l < classes[j].length; l++) {
+        if (classes[k].includes(classes[j][l])) {
+          sharedClasses.push(classes[j][l]);
+        }
+      }
+
+      var stringified = JSON.stringify(pairs);
+      results[stringified] = sharedClasses;
+      sharedClasses = [];
+      pairs = [];
     }
   }
+  return results;
 };
 
 pairStudents([
@@ -59,3 +61,10 @@ pairStudents([
   ["17", "Political Science"],
   ["94", "Economics"]
 ]);
+
+// find_pairs(student_course_pairs) =>
+// {
+//     [58, 17]: ["Software Design", "Linear Algebra"]
+//     [58, 94]: ["Economics"]
+//     [17, 94]: []
+// }
