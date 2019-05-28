@@ -3,7 +3,7 @@
 // Explanation: Maximum average is (12-5-6+50)/4 = 51/4 = 12.75
 
 var findMaxAverage = function(nums, k) {
-  var max = 0;
+  var max = -Infinity;
   var sum = 0;
 
   for (var i = 0; i < nums.length; i++) {
