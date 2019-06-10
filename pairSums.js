@@ -9,11 +9,10 @@ var pairSum = (array) => {
     for (var i = 0; i < array.length - 1; i++) {
       for (var j = i + 1; j < array.length; j++) {
         if (!map[array[i]] + map[array[j]]) {
-          map[array[i] + map[array[j] = [[map[array[i]], map[array[j]];
+          map[array[i] + map[array[j] = [[map[array[i]], map[array[j]]
         } else {
           map[array[i]] + map[array[j]].push([array[i], array[j]]);
         }
       }
-    } 
+    }   
  }
- 
