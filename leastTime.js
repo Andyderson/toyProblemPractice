@@ -1,24 +1,21 @@
-function minimumTime(numOfParts, parts) {
+function leastTime(times, array) {
   var total = 0;
   var sum = 0;
 
-  parts.sort((a, b) => a - b);
+  array.sort((a, b) => a - b);
 
-  for (var i = 0; i < numOfParts - 1; i++) {
-    parts.sort((a, b) => a - b);
+  for (var i = 0; i < times - 1; i++) {
+    array.sort((a, b) => a - b);
 
-    sum = parts[0] + parts[1];
+    sum = array[0] + array[1];
 
     total += sum;
-    //       console.log('i:', i);
-    parts.shift();
-    parts.shift();
-    parts.unshift(sum);
-    //       console.log('parts:', parts);
-    //       console.log('total:', total);
+    array.shift();
+    array.shift();
+    array.unshift(sum);
   }
 
   return total;
 }
 
-console.log(minimumTime(4, [20, 4, 8, 2])); // 54
+

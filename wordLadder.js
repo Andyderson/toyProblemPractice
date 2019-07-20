@@ -36,10 +36,7 @@ var ladderLength = function(beginWord, endWord, wordList) {
       for (var j = 0; j < newWord.length; j++) {
         for (var k = 0; k < wordList[i].length; k++) {
           if (newWord[k] !== wordList[i][k]) {
-            // console.log('newWord', newWord[j])
-            // console.log('count up', wordList[i])
             count++;
-            // console.log('count', count);
           }
         }
 
