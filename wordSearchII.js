@@ -17,7 +17,6 @@ var findWords = function(board, words) {
   var results = [];
   var tempString = "";
   var word;
-  var letter;
 
   var check = string => {
     if (word === string) {
