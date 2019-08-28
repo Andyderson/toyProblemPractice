@@ -7,9 +7,9 @@ var kSimilarity = function(A, B) {
     b = temp;
   };
 
-  for (var i = 0; i < A.length; i++) {
+  for (var i = 0; i < A.length - 1; i++) {
     for (var j = i + 1; j < B.length; j++) {
-      if (A[i] === B[j]) {
+      if (A[i] === B[j] && B[i] !== B[j]) {
         swap(B[i], B[j]);
         count = count + j - i;
         break;
@@ -21,7 +21,7 @@ var kSimilarity = function(A, B) {
   return count;
 };
 
-/* console.log(kSimilarity('ab', 'ba')); //1 */
-/* console.log(kSimilarity('abc', 'bca')); //2 */
-/* console.log(kSimilarity('abac', 'baca')); //2 */
+// console.log(kSimilarity('ab', 'ba')); //1
+// console.log(kSimilarity('abc', 'bca')); //2
+// console.log(kSimilarity('abac', 'baca')); //2
 console.log(kSimilarity("aabc", "abca")); //2
