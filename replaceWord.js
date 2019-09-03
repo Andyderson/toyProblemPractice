@@ -8,5 +8,6 @@ var replaceWords = function (dict, sentence) {
             }
         }
     }
+
     return split.join(" ");
 };
