@@ -18,5 +18,9 @@ var maximum69Number = (num) => {
     return values.sort((a, b) => b - a)[0];
 };
 
+var maximum69Number = (num) => {
+    return parseInt(num.toString().replace('6', '9'))
+};
+
 console.log(maximum69Number(9669)); //9969
 console.log(maximum69Number(9999)); //9999
